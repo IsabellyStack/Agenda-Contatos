@@ -8,7 +8,7 @@ A aplicação é construída de forma incremental, evoluindo a estrutura de arma
 
 ## 🎯 Objetivo
 
-Desenvolver um sistema de Agenda de Contatos em Java, aplicando na prática os conceitos fundamentais de programação, separação de responsabilidades em múltiplas classes, interface via console e caixas de diálogo do `JOptionPane`.
+Desenvolver um sistema de Agenda de Contatos em Java, aplicando na prática os conceitos fundamentais de programação, separação de responsabilidades em múltiplas classes, controle de fluxo e caixas de diálogo com `JOptionPane`.
 
 ---
 
@@ -20,19 +20,18 @@ Desenvolver um sistema de Agenda de Contatos em Java, aplicando na prática os c
 | `V.0.1.0` | Arrays (Vetores) | Vetores, manipulação por índices, laço `for` e limitação de capacidade fixa |
 | `V.0.2.0` | `List` / `ArrayList` | Coleções dinâmicas, métodos `add()`, `get()`, `remove()` e `size()` |
 | `V.0.3.0` | `List` / `ArrayList` | Atualização de elementos com `set()` e implementação do CRUD completo |
-| `V.1.0.0` | Modularização com Métodos | Refatoração em métodos estáticos (`public static void`) na classe principal |
-| **`V.1.1.0`** | Separação em Múltiplas Classes | Organização modular em `Principal`, `Agenda` e `Uteis`, integração com `JOptionPane` e opção "Sobre" |
+| `V.1.0.0` | Modularização | Refatoração em métodos estáticos (`public static void`) na classe principal |
+| `V.1.1.0` | Separação em Classes | Divisão em `Principal`, `Agenda` e `Uteis`, integração com `JOptionPane` e opção "Sobre" |
+| **`V.1.1.1`** | Correção de Controle de Fluxo | Refatoração do método `sair()` retornando `boolean` para encerramento correto do `while` |
 
 ---
 
-## 🚀 Versão Atual — `V.1.1.0`
+## 🚀 Versão Atual — `V.1.1.1`
 
-A versão **V.1.1.0** avança na **arquitetura do código**, dividindo as responsabilidades da aplicação entre classes específicas:
+A versão **V.1.1.1** traz um ajuste fino no controle de fluxo da aplicação e na passagem de parâmetros em Java:
 
-- 🚀 **`Principal.java`**: Ponto de entrada do sistema. Responsável apenas por instanciar as coleções de dados, controlar o laço de repetição (`while`) e direcionar as opções escolhidas no menu via `switch`.
-- 📂 **`Agenda.java`**: Concentra a lógica das operações do **CRUD** (`adicionar`, `listar`, `pesquisar`, `atualizar` e `excluir`).
-- 🛠️ **`Uteis.java`**: Agrupa funções utilitárias do sistema, como exibição da mensagem inicial, montagem do menu, leitura de opções, encerramento e exibição da janela "Sobre".
-- 💬 **`JOptionPane`**: Introduz o uso de componentes gráficos (`javax.swing.JOptionPane`) para exibir informações sobre a autoria do projeto.
+- 🛑 **Ajuste na lógica de encerramento (`sair()`):** O método `sair()` na classe `Uteis` foi alterado de `void` para `boolean`, retornando `false`. Na classe `Principal`, o retorno passa a atualizar diretamente a variável `continuar = Uteis.sair()`, corrigindo o problema de passagem de parâmetro por valor e garantindo que o laço `while` seja encerrado corretamente.
+- 📌 **Atualização de versão:** O banner inicial exibido ao executar a aplicação foi atualizado para **v1.1.1**.
 
 ---
 
@@ -43,7 +42,7 @@ A versão **V.1.1.0** avança na **arquitetura do código**, dividindo as respon
 3. 🔎 **Procurar contato:** Busca um contato específico pelo nome.
 4. ✏️ **Alterar contato:** Atualiza as informações de um contato existente.
 5. 🗑️ **Excluir contato:** Remove um contato da agenda.
-6. 🚪 **Sair:** Encerra a execução da aplicação.
+6. 🚪 **Sair:** Encerra a execução da aplicação de forma segura.
 7. ℹ️ **Sobre:** Exibe uma janela gráfica (`JOptionPane`) com dados do desenvolvedor.
 
 ---
