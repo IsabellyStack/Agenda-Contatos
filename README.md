@@ -1,43 +1,55 @@
 # 📱 Agenda de Contatos
 
-Projeto desenvolvido em **Java** na disciplina de **Programação Orientada a Objetos (POO)**.
+Projeto desenvolvido em **Java** para a disciplina de **Programação Orientada a Objetos (POO)**.
 
-A aplicação é desenvolvida de forma incremental, evoluindo a estrutura de armazenamento e as funcionalidades a cada versão.
+A aplicação é construída de forma incremental, evoluindo a estrutura de armazenamento de dados, as funcionalidades e a organização do código a cada nova versão.
+
+---
 
 ## 🎯 Objetivo
 
-Desenvolver uma Agenda de Contatos aplicando os conceitos estudados durante a disciplina.
+Desenvolver um sistema de Agenda de Contatos em Java via console, aplicando na prática os conceitos fundamentais de programação, modularização e estruturas de dados estudados durante a disciplina.
 
-## 📈 Evolução
+---
 
-| Versão | Armazenamento | Principais conceitos |
-|---|---|---|
-| `V.0.0.0` | Variáveis simples | `String`, `Scanner`, `if-else`, `switch` e `while` |
-| `V.0.1.0` | Arrays | Vetores, índices, `for` e capacidade fixa |
-| `V.0.2.0` | `List` + `ArrayList` | Tamanho dinâmico, `add()`, `get()`, `remove()` e `size()` |
-| `V.0.3.0` | `List` + `ArrayList` | Alteração de contatos com `set()` e CRUD |
+## 📈 Evolução do Projeto
 
-### V.0.3.0 — Versão atual
+| Versão | Armazenamento / Estrutura | Principais Conceitos / Funcionalidades |
+| :---: | :--- | :--- |
+| `V.0.0.0` | Variáveis simples | Entrada e saída (`Scanner`), condicionais (`if-else`, `switch`) e repetição (`while`) |
+| `V.0.1.0` | Arrays (Vetores) | Vetores, manipulação por índices, laço `for` e limitação de capacidade fixa |
+| `V.0.2.0` | `List` / `ArrayList` | Coleções dinâmicas, métodos `add()`, `get()`, `remove()` e `size()` |
+| `V.0.3.0` | `List` / `ArrayList` | Atualização de elementos com `set()` e implementação do CRUD completo |
+| **`V.1.0.0`** | Modularização com Métodos | Refatoração em métodos estáticos (`public static void`), reuso de código e separação de responsabilidades |
 
-A versão atual adiciona a funcionalidade de **alterar contatos** utilizando `set()`.
+---
 
-O sistema passa a possuir um CRUD completo:
+## 🚀 Versão Atual — `V.1.0.0`
 
-- **CREATE** → Adicionar
-- **READ** → Listar e procurar
-- **UPDATE** → Alterar
-- **DELETE** → Excluir
+A versão **V.1.0.0** foca na **organização e modularização do código**. Todo o fluxo do programa, antes concentrado no método `main`, foi dividido em métodos específicos e bem definidos:
+
+- **Controle da Aplicação:** `mostraInicializacao()`, `mostraMenu()`, `selecionaOpcao()` e `sair()`.
+- **Operações do CRUD:**
+  - `adicionar()` → Cadastro de novos contatos.
+  - `listar()` → Exibição da lista completa.
+  - `pesquisar()` → Busca por nome.
+  - `atualizar()` → Edição de contatos existentes.
+  - `excluir()` → Remoção de registros.
+
+---
 
 ## ⚙️ Funcionalidades
 
-- ➕ Adicionar contato
-- 📋 Listar contatos
-- 🔎 Procurar contato
-- ✏️ Alterar contato
-- 🗑️ Excluir contato
-- 🚪 Sair
+1. ➕ **Adicionar contato:** Cadastra nome, celular e e-mail.
+2. 📋 **Listar contatos:** Exibe todos os contatos cadastrados.
+3. 🔎 **Procurar contato:** Busca um contato específico pelo nome.
+4. ✏️ **Alterar contato:** Atualiza as informações de um contato existente.
+5. 🗑️ **Excluir contato:** Remove um contato da agenda.
+6. 🚪 **Sair:** Encerra a aplicação.
 
-## 📂 Estrutura do projeto
+---
+
+## 📂 Estrutura do Projeto
 
 ```text
 Agenda-Contatos/
