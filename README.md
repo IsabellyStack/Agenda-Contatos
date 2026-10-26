@@ -24,28 +24,30 @@ Desenvolver um sistema de Agenda de Contatos em Java, aplicando na prática os c
 | `V.1.1.0` | Separação em Classes | Divisão em `Principal`, `Agenda` e `Uteis`, integração com `JOptionPane` e opção "Sobre" |
 | `V.1.1.1` | Correção de Controle de Fluxo | Refatoração do método `sair()` retornando `boolean` para encerramento correto do `while` |
 | `V.2.1.0` | Persistência em Arquivo (`.txt`) | Implementação da classe `Persistencia` (`FileWriter`, `PrintWriter`, `BufferedReader`), salvando e carregando dados automaticamente |
-| **`V.3.0.0`** | **Classes e Objetos** | **Introdução à Programação Orientada a Objetos com a criação da classe `Contato`** |
+| `V.3.0.0` | Classes e Objetos | Modulo de POO com a criação da classe `Contato` (atributos, construtores e getters/setters) |
+| **`V.3.1.0`** | **Coleção de Objetos** | **Gerenciamento de instâncias com `List<Contato>` (`ArrayList`), combinando POO com coleções dinâmicas** |
 
 ---
 
-## 🚀 Versão Atual — `V.3.0.0`
+## 🚀 Versão Atual — `V.3.1.0`
 
-A versão **V.3.0.0** consolida a transição para a **Programação Orientada a Objetos (POO)** pura:
+A versão **V.3.1.0** consolida o uso de **Programação Orientada a Objetos (POO)** integrada a **Coleções Dinâmicas**:
 
-- 🧱 **Orientação a Objetos (`Contato.java`):** Encapsulamento dos atributos do contato (`nome`, `celular`, `email`) em uma classe própria, utilizando construtores, métodos *getters/setters* e abstração de dados.
-- 💾 **Persistência de Objetos (`Persistencia.java`):** Leitura e escrita refinadas para instanciar e serializar objetos `Contato` diretamente no arquivo `contatos.txt`.
-- 📌 **Atualização de versão:** Banner inicial atualizado para a versão **v3.0.0**.
+- 🧩 **Molde e Objeto (`Contato.java`):** Abstração do contato em uma classe com atributos encapsulados (`nome`, `celular`, `email`), construtores customizados, métodos acessores (*getters/setters*) e sobrita do `toString()`.
+- 📦 **Coleção Tipada (`List<Contato>`):** A classe `Agenda` deixa de gerenciar listas de strings separadas e passa a manipular uma única coleção de objetos `Contato` (`List<Contato>`), garantindo type safety e código mais limpo.
+- 💾 **Persistência de Objetos (`Persistencia.java`):** Leitura do arquivo `contatos.txt` instanciando objetos `Contato` diretamente na memória e conversão da lista de objetos para o arquivo no salvamento.
+- 📌 **Atualização de versão:** Banner inicial atualizado para a versão **v3.1.0**.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-1. ➕ **Adicionar contato:** Cadastra nome, celular e e-mail em memória criando instâncias da classe `Contato`.
-2. 📋 **Listar contatos:** Exibe todos os contatos cadastrados no console.
-3. 🔎 **Procurar contato:** Busca um contato específico pelo nome.
-4. ✏️ **Alterar contato:** Atualiza as informações de um contato existente.
-5. 🗑️ **Excluir contato:** Remove um contato da agenda.
-6. 🚪 **Sair:** Salva os dados em `contatos.txt` e encerra a execução da aplicação.
+1. ➕ **Adicionar contato:** Cria e insere um novo objeto `Contato` na lista.
+2. 📋 **Listar contatos:** Percorre a lista de objetos exibindo as informações formatadas no console.
+3. 🔎 **Procurar contato:** Realiza busca por nome filtrando na coleção de objetos `Contato`.
+4. ✏️ **Alterar contato:** Atualiza os atributos do objeto selecionado na lista.
+5. 🗑️ **Excluir contato:** Remove o objeto `Contato` da lista.
+6. 🚪 **Sair:** Grava todos os objetos da lista em `contatos.txt` e encerra a aplicação.
 7. ℹ️ **Sobre:** Exibe uma janela gráfica (`JOptionPane`) com dados do desenvolvedor.
 
 ---
